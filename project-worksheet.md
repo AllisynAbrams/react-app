@@ -10,9 +10,11 @@
 
 ## Project Description
 
-For this project, I plan to make a pet listings app. I will use React's Link and Source to provide access to the list of all pets, each pet's individual details, and the user's favorited pets. The pet images and details will be populated using fetch to make an API call. The leaderboard will be stored on a Google Sheet and also viewed through an API call.
+For this project, I plan to make a pet listings app. I will use React's Link and Source to provide access to the list of all pets, each pet's individual details, and the user's favorited pets. The pet images and details will be populated using fetch to make an API call. 
 
-Some type of dog/pet finder to allow the user to search through “cards” of dogs, maybe filter on at least one thing (probably size..), click on one “pet card” to get more information on that dog (more info would also be sure to include a unique id for that dog), save/unsave dogs to a list of favorites, and have a contact form for the user to reach out if he/she is interested in a dog and require them to include the dog’s unique id listed on its page
+On page load/mount, a request will be made to the PetFinder API and the image and details of each pet in the PetListings component will show on the screen, along with an "add to favorites" button (each pet and associated info will show in a "card").
+When a user clicks on a pet card, it will route to the SinglePetDetails component and render more details for that pet, along with a mailto button to email about that specific pet. On this page there will also be a button linking to the petlistings for the user to easily click to go back to all pet listings.
+
 
 ## API
 
@@ -99,8 +101,8 @@ wireframes:
 - [mobile pet listings (home/main)](https://res.cloudinary.com/dv7inaqe9/image/upload/v1601906278/mobile_-_pet_listings_home_vlkhxs.jpg)
 - [mobile sinlge pet details page](https://res.cloudinary.com/dv7inaqe9/image/upload/v1601908077/mobile_singlepetdetails_cwb0ar.jpg)
 
-architecture: TBD
-- [react architecture](https://sitemap.mockflow.com/view/green-proj2-architecture)
+architecture:
+- TBD
 
 
 ### MVP/PostMVP - 5min
@@ -108,18 +110,21 @@ architecture: TBD
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP EXAMPLE
-- Fully functional, interactive, trivia game
-	- Questions/possible answers populated by API call
-	- Tells player if selected answer is correct
-	- Keeps track of score
-- Navbar with options that link to their corresponding pages
-- Options page that allows player to select trivia theme/difficulty
-- Instructions page
+- Functional pet listings app
+	- All pet images/info wil be populated by an API call and each will be formated in some type of card format
+	- Under each pet card there will be a button the user can click to add the above pet to his/her favorites
+	- User can click a pet card and be directed to a page with further details about that pet, as well as a contact method to reach out about that pet
+	
+- Navbar with options that link to their corresponding pages (home (aka all pet listings), favorites, contact us)
+
+- Favorites page that displays the pet cards of the pets "favorited" by the user 
+	- under each pet card there will be a button that allows the user to remove that pet from their favorites
+
 
 #### PostMVP EXAMPLE
 
-- Leaderboard that is updated using Firebase
-- Create multiple leaderboards depending on selected difficulty
+- Filter bar on the pet listings page that allows the user to see only dogs, only cats, or only pets of other species
+- in the pet listings page, have an up arrow that always stays at the bottom of the view and can be clicked by the user to go back to the top of the page
 
 ## Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
@@ -145,34 +150,30 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 Unless otherwise noted, time is listed in hours:
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Create React app and files for all components | H | 1 | 40min | 40min |
-| Basic Navbar & Footer | H | 1 | 45min | 45min |
-| Set up basic React routing | H | 1 | 30min | 30min |
-| Make trivia API call, parse important data | H | 2 | 1.5 | 1.5 |
-| Display questions and selectable answers, change on submit | H | 3 | 4 | 4 |
-| Create logic to test for correct answer | H | 1 | 35min | 35min |
-| Allow only one answer to be selected per question | H | 1 | 1 | 1 |
-| Keep track of score | H | 2 | 2 | 2 |
-| Style game display - basic | H | 2 | 3 | 3 |
-| Make game display dynamic | H | 1 | 1 | 1 |
-| Create game options form | H | 3 | 3 | 3 |
-| Incorporate selected options into API call | H | 1 | 1.5 | 1.5 |
-| Add content for instructions page | H | 1 | 1 | 1 |
-| Make Navbar dynamic using ReactStrap | H | 1 | 1 | INC |
-| Learn how to use Firebase | M | 4 | 3 | 3 |
-| Add submit your score form to end of game | M | 3 | 2 | 2 |
-| Create leaderboard, populate locally | M | 3 | 3 | 3 |
-| Update and populate leaderboard using Firebase | M | 3 | .5 | INC |
-| Create multiple leaderboards, based on selected difficulty | L | 3 | 0 | INC |
-| Additional styling for game (progress bar, etc.) | L | 4 | 5 | 5 |
-| Additional styling for Navbar, Footer, other pages | L | 4 | 9 | 9 |
-| Total | H | 45 | 44 | 44 |
+|  Component  |  Priority  |  Estimated Time  |  Actual Time  |
+|  ---  |  :---:  |   :---:  |  :---:  |
+| Create React app and files for all components | high | 1 | 1 |
+| header/navbar (reactstrap or bootstrap - need to look into this?) | high | 2 | 2 |
+| banner | low | 0.5 | 0.5 |
+| set up React routing | high | 2 | 2 |
+| make API call and practice displaying data | high | 1.5 | 1.5 |
+| display and format/style pet listings | high | 3 | 3 |
+| make add to favorites button add to favorites component on click | high | 3 | 3 |
+| make add to favorites button add to favorites component on click | high | 3 | 3 |
+| make remove from favorites button remove from favorites  component on click | high | 2 | 2 |
+| display/format single pet listing page | high | 3 | 3 |
+| contact section - adding and styling contact form | med | 1 | 1 |
+| media queries for tablet responsive  | high | 1 | 1 |
+| media queries for desktop responsive  | high | 1 | 1 |
+| figure out how to deploy on netlify | high | 2 | 2 |
+| testing & de-bugging | high | 2 | 2 |
+| choose fonts and color scheme | med | 2 | 2 |
+|  Total  | H | 30 | 30 |
 
 ## Additional Libraries
-ReactStrap - responsive navbar, progress bar for game
-Firebase - updating and retrieving leaderboard
+ReactStrap - responsive navbar
+????? would this be bootstrap ????
+
 
 ## Code Snippet
 
