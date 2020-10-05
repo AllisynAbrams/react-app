@@ -1,5 +1,8 @@
 # Project Overview
 
+What is a panda prize?
+(https://www.discoveraudit.org/wp-content/uploads/2018/01/technical-skills-larger-file.gif)
+
 ## Project Links
 
 - [github repo](https://github.com/AllisynAbrams/react-app)
