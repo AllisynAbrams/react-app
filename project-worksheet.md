@@ -1,7 +1,7 @@
 # Project Overview
 
-What is a panda prize?
-![What is a panda prize?](https://www.discoveraudit.org/wp-content/uploads/2018/01/technical-skills-larger-file.gif)
+- What is a panda prize?
+- ![What is a panda prize?](https://www.discoveraudit.org/wp-content/uploads/2018/01/technical-skills-larger-file.gif)
 
 ## Project Links
 
