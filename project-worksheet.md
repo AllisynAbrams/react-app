@@ -2,12 +2,14 @@
 
 ## Project Links
 
-- [github repo] (https://github.com/AllisynAbrams/react-app)
-- live projects: 
+- [github repo](https://github.com/AllisynAbrams/react-app)
+- live project: tbd
 
 ## Project Description
 
-For this project, I plan to make a multiple-choice trivia game. I will use React's Link and Source to provide access to instructions, the game itself, and a leaderboard. The questions and possible answers will be populated using an API call. The leaderboard will be stored on a Google Sheet and also viewed through an API call.
+For this project, I plan to make a pet listings app. I will use React's Link and Source to provide access to the list of all pets, each pet's individual details, and the user's favorited pets. The pet images and details will be populated using fetch to make an API call. The leaderboard will be stored on a Google Sheet and also viewed through an API call.
+
+Some type of dog/pet finder to allow the user to search through “cards” of dogs, maybe filter on at least one thing (probably size..), click on one “pet card” to get more information on that dog (more info would also be sure to include a unique id for that dog), save/unsave dogs to a list of favorites, and have a contact form for the user to reach out if he/she is interested in a dog and require them to include the dog’s unique id listed on its page
 
 ## API
 
@@ -91,10 +93,10 @@ return (
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
 wireframes:
-- [mobile pet listings (home/main)] (https://res.cloudinary.com/dv7inaqe9/image/upload/v1601906278/mobile_-_pet_listings_home_vlkhxs.jpg)
-[mobile sinlge pet details page] (https://res.cloudinary.com/dv7inaqe9/image/upload/v1601906278/mobile_-_single_pet_details_d3tthv.jpg)
+- [mobile pet listings (home/main)](https://res.cloudinary.com/dv7inaqe9/image/upload/v1601906278/mobile_-_pet_listings_home_vlkhxs.jpg)
+- [mobile sinlge pet details page](https://res.cloudinary.com/dv7inaqe9/image/upload/v1601908077/mobile_singlepetdetails_cwb0ar.jpg)
 
-architecture:
+architecture: TBD
 - [react architecture](https://sitemap.mockflow.com/view/green-proj2-architecture)
 
 
