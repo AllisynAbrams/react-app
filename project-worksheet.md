@@ -2,8 +2,8 @@
 
 ## Project Links
 
-- [https://github.com/adgreenie/react.git](https://github.com/adgreenie/react.git)
-- [https://answer10.web.app/](https://answer10.web.app/)
+- github repo: (https://github.com/AllisynAbrams/react-app)
+- live projects: 
 
 ## Project Description
 
@@ -11,32 +11,90 @@ For this project, I plan to make a multiple-choice trivia game. I will use React
 
 ## API
 
-https://opentdb.com/api.php?amount=10
+hhttps://api.petfinder.com/v2/animals
+
+TEST to get data from API - successfully rrendered the URL to each individual animal page in App.js
+
+export default function App() {
+  
+  const [animals, setAnimals] = useState([])
+
+// Used this article as basis to make the API call.  
+// https://dojo.domo.com/t5/Domo-Developer/Tutorial-build-your-own-connector-against-petfinder-API/td-p/48593#
+
+// It requires an initial call to get a Bearer Token which is then used in a second call to retrieve the data
+const getToken = async () => {
+  const client_id = 'ibOcZPb7jS41hAMJi3oLQWM9oj6h0alpVMmAwBktJZiLeRhYj6'
+  const client_secret = 'lTZW5iz2bA84aDs4fz09e9yArV5qbJNMpIYGycv3'
 
 
-```
-{
-"category": "Entertainment: Music",
-"type": "multiple",
-"difficulty": "medium",
-"question": "Johnny Cash did a cover of this song written by lead singer of Nine Inch Nails, Trent Reznor.",
-"correct_answer": "Hurt",
-"incorrect_answers": [
-"Closer",
-"A Warm Place",
-"Big Man with a Gun"
-]
-},
-```
+  // FIRST FETCH CALL
+  const res = await fetch("https://api.petfinder.com/v2/oauth2/token", {
+    body: `grant_type=client_credentials&client_id=${client_id}&client_secret=${client_secret}`,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    method: "POST"
+  })
+  const json = await res.json()
+  const token = json.access_token
+  
+
+  // SECOND FETCH CALL
+  const petRes = await  fetch("https://api.petfinder.com/v2/animals", 
+    {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+    })
+  const petJson = await petRes.json()
+  // THE DATA YOU SEE IN THE CONSOLE
+  // console.log('this is petJson from App', petJson)
+  // console.log('this is petJson.animals[0]', petJson.animals[0].type)
+  console.log('this is petJson.animals', petJson.animals)
+  setAnimals(petJson.animals)
 
 
-# TBD .............
+}
+
+// useEffect w empty depend array makes it so whatever is inside of it 
+// only happens once on mount/load (in this case the function to call the API)
+useEffect (() => {
+  getToken();
+ },[]);
+
+//  ternary conditional to say, if the animals aray (at least first item) is defined/TRUE (AKA available from 
+// the api call now), then map over the animals array and return the url of each item/index,
+// otherwise display 'loading..'
+
+const displayAnimals = 
+(animals[0]) ? animals.map((animal, index) => {
+  console.log('this is animals.url', animals[index].url)
+  return <p>{animal.url}</p>
+})  : 'LOADING....'
+
+console.log('this is displayAnimals', displayAnimals)
+console.log('this is animals in useState', animals)
+
+
+return (
+  <>
+    {displayAnimals}
+  </>
+  )
+};
+
+
 
 ## Wireframes
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-- [wireframes](https://wireframepro.mockflow.com/view/green-proj2-wireframe)
+- [wireframes]
+[mobile - pet listings (home/main)] (https://res.cloudinary.com/dv7inaqe9/image/upload/v1601906278/mobile_-_pet_listings_home_vlkhxs.jpg)
+[mobile - sinlge pet details page] (https://res.cloudinary.com/dv7inaqe9/image/upload/v1601906278/mobile_-_single_pet_details_d3tthv.jpg)
+
+
 - [react architecture](https://sitemap.mockflow.com/view/green-proj2-architecture)
 
 
