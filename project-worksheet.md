@@ -2,7 +2,7 @@
 
 ## Project Links
 
-- github repo: (https://github.com/AllisynAbrams/react-app)
+- [github repo] (https://github.com/AllisynAbrams/react-app)
 - live projects: 
 
 ## Project Description
@@ -90,11 +90,11 @@ return (
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-- [wireframes]
-[mobile - pet listings (home/main)] (https://res.cloudinary.com/dv7inaqe9/image/upload/v1601906278/mobile_-_pet_listings_home_vlkhxs.jpg)
-[mobile - sinlge pet details page] (https://res.cloudinary.com/dv7inaqe9/image/upload/v1601906278/mobile_-_single_pet_details_d3tthv.jpg)
+wireframes:
+- [mobile pet listings (home/main)] (https://res.cloudinary.com/dv7inaqe9/image/upload/v1601906278/mobile_-_pet_listings_home_vlkhxs.jpg)
+[mobile sinlge pet details page] (https://res.cloudinary.com/dv7inaqe9/image/upload/v1601906278/mobile_-_single_pet_details_d3tthv.jpg)
 
-
+architecture:
 - [react architecture](https://sitemap.mockflow.com/view/green-proj2-architecture)
 
 
